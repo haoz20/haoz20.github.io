@@ -12,6 +12,18 @@ const pets = [
         "img": "images/dogs/dog02.jpg"
     },
     {
+        "name": "Charlie",
+        "type": "Dog",
+        "age": 3,
+        "img": "images/dogs/dog03.jpg"
+    },
+    {
+        "name": "Leo",
+        "type": "Cat",
+        "age": 4,
+        "img": "images/cats/cat03.jpg"
+    },
+    {
         "name": "Whiskers",
         "type": "Cat",
         "age": 2,
@@ -23,6 +35,13 @@ const pets = [
         "age": 2,
         "img": "images/cats/cat02.jpg"
     },
+    {
+        "name": "Simba",
+        "type": "Cat",
+        "age": 4,
+        "img": "images/cat.webp"
+    },
+
     {
         "name": "Goldie",
         "type": "Capybara",
@@ -42,11 +61,24 @@ const pets = [
         "img": "images/birds/bird01.jpg"
     },
     {
-        "name": "Polly",
+        "name": "Tweety",
         "type": "Bird",
         "age": 4,
         "img": "images/birds/bird02.jpg"
+    },
+    {
+        "name": "Charlie",
+        "type": "Dog",
+        "age": 4,
+        "img": "images/dog.jpg"
+    },
+    {
+        "name": "Max and Ruby",
+        "type": "Jumbotron",
+        "age": 2,
+        "img": "images/jumbotron.jpg"
     }
+    
 
 ]
 
