@@ -32,9 +32,8 @@ nav a {
 }
 
 .pet-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
-    padding: 10px 100px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }

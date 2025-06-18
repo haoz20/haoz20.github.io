@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header>
+    <header style="background: url('images/jumbotron.jpg') center/cover no-repeat;">
         <h1>Welcome to Our Pet Store</h1>
         <nav>
             <a href="/petstore/">Home</a>
@@ -20,9 +20,25 @@
 
     <main>
         <section class="featured">
+            <div>
+                Type:
+                <input type="checkbox" id="dog" name="pet-type" value="Dog" checked>
+                <label for="dog">Dog</label>
+
+                <input type="checkbox" id="cat" name="pet-type" value="Cat" checked>
+                <label for="cat">Cat</label>
+
+                <input type="checkbox" id="capybara" name="pet-type" value="Capybara" checked>
+                <label for="capybara">Capybara</label>
+
+
+                <input type="checkbox" id="bird" name="pet-type" value="Bird" checked>
+                <label for="bird">Bird</label>
+            </div>
             <h2>All Pets</h2>
 
             <div id="pet-list" class="pet-list">
+
                 <!-- Pets will be loaded here dynamically -->
             </div>
 
@@ -42,7 +58,7 @@
     </main>
 
     <footer id="contact">
-        <div style ="margin-right: 20px;">
+        <div style="margin-right: 20px;">
             <p>88 หมู่ที่ 8 ถนน บางนา-ตราด Bang Sao Thong, Bang Sao Thong District, Samut Prakan 10540</p>
             <p>Email: <strong>info@petstore.com</strong></p>
 
@@ -55,7 +71,9 @@
         </div>
 
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="cat.js"></script>
     <script src="script.js"></script>
     <script src="loadpets.js"></script>
 </body>
