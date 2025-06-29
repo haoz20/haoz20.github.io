@@ -21,7 +21,23 @@
 //     console.log('Data Received',json)
 // })
 
-var quoationData = []
+var quoationData = [
+    {
+        description: "Notebook (A5)",
+        quantity: 2,
+        unitPrice: 55
+    },
+    {
+        description: "Handmade Soap",
+        quantity: 1,
+        unitPrice: 120
+    },
+    {
+        description: "Canvas Tote Bag",
+        quantity: 3,
+        unitPrice: 220
+    }
+]
 
 const items = [
   { "name": "Notebook (A5)", "price": 55 },
