@@ -23,6 +23,36 @@
 
 var quoationData = []
 
+const items = [
+  { "name": "Notebook (A5)", "price": 55 },
+  { "name": "Handmade Soap", "price": 120 },
+  { "name": "Ballpoint Pen Set", "price": 90 },
+  { "name": "Mini Plant Pot", "price": 150 },
+  { "name": "Canvas Tote Bag", "price": 220 },
+  { "name": "Desk Organizer", "price": 180 },
+  { "name": "Scented Candle", "price": 200 }
+];
+
+
+const itemSelect = $("#newItemDescription");
+items.forEach(item => {
+    const option = $("<option></option>")
+        .val(item.name)
+        .text(item.name);
+    itemSelect.append(option);
+});
+
+itemSelect.on('change', function() {
+    const selectedName = $(this).val();
+    const found = items.find(item => item.name === selectedName);
+    if (found) {
+        $("#newItemPPU").val(found.price);
+    } else {
+        $("#newItemPPU").val('');
+    }
+});
+
+
 function addItem() {
     var d = $("#newItemDescription").val()
     var u = $("#newItemPPU").val()
@@ -44,12 +74,12 @@ function renderTable() {
         subTotal = subTotal + (e.unitPrice * e.quantity)
     })
     var vat = (subTotal * .07).toFixed(2)
-    var total = subTotal * 1.07
+    var total = (subTotal * 1.07).toFixed(2)
 
     console.log('subTotal', subTotal)
-    $("#subTotal").html("" + subTotal)
-    $("#vat").html("" + vat)
-    $("#total").html("" + total)
+    $("#subTotal").html(subTotal.toFixed(2))
+    $("#vat").html(vat)
+    $("#total").html(total)
 
     var dataRows = data.map((e, i) => {
         let amount = e.quantity * e.unitPrice
@@ -68,7 +98,7 @@ function renderTable() {
 
     // Insert into the table
     dataRows.forEach((r) => {
-        $('#quotationTable tbody').before(r)
+        $('#dataTable').append(r)
     })
 
 }
@@ -78,15 +108,23 @@ function deleteItem(i) {
     renderTable()
 }
 
+// $(document).ready(function () {
+//     // $.getJSON('data/data.json',
+//     //     data => {
+//     //         // render the table
+//     //         quoationData = data;
+
+//     //         var d = new Date()
+//     //         $('#quotationDate').html(d.toDateString())
+//     //         renderTable()
+//     //     })
+
+    
+// })
+
+
 $(document).ready(function () {
-    $.getJSON('data/data.json',
-        data => {
-            // render the table
-            quoationData = data;
-
-            var d = new Date()
-            $('#quotationDate').html(d.toDateString())
-            renderTable()
-        })
-
+    var d = new Date()
+    $('#quotationDate').html(d.toDateString())
+    renderTable()
 })
